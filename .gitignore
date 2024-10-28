@@ -1,0 +1,5 @@
+venv/*
+yu-gi-oh/*
+models/*
+ntlk_data/*
+*__pycache__
