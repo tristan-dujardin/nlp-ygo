@@ -1,5 +1,5 @@
 venv/*
 yu-gi-oh/*
 models/*
-ntlk_data/*
+nltk_data/*
 *__pycache__
