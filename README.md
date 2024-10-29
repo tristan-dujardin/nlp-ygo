@@ -16,6 +16,7 @@ Two models are trained in this dataset:
 
 - To download the data, at the root of the project run: git clone https://github.com/fferegrino/yu-gi-oh/
 - Install the necessary libraries: pip install -r requirements.txt
+- Create a models firectory: mkdir models
 - To load nltk_data, run the init.py file: python init.py
 - Train the model with: python train.py
 - Finally you can test the model with the following command:  
