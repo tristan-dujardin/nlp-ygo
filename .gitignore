@@ -1,5 +1,5 @@
 venv/*
-yu-gi-oh/*
+yu-gi-oh/
 models/*
 nltk_data/*
 *__pycache__
