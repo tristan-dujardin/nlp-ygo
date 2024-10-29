@@ -5,6 +5,12 @@ import pandas as pd
 from src.data_helper import prep_data_predict, prep_data_predict
 
 def get_inputs():
+    """
+    Parses command line arguments for names and IDs.
+
+    Returns:
+        tuple: A tuple containing a list of names and a list of IDs.
+    """
     parser = argparse.ArgumentParser(description="Process names and IDs.")
 
     parser.add_argument('-n', '--names', nargs='*', 
@@ -21,6 +27,15 @@ def get_inputs():
 
 
 def print_results(res_arch, res_ban, test_cards, arch_test):
+    """
+    Prints the results of the predictions in a formatted table.
+
+    Args:
+        res_arch (list): List of predicted archetypes.
+        res_ban (list): List of predicted banlists.
+        test_cards (DataFrame): DataFrame containing the test card information.
+        arch_test (DataFrame): DataFrame containing the archetype test data.
+    """
     print(f"{'Name':<42} {'Expected Banlist':<25} {'Predicted Banlist':<21} {'Expected Archetype':<27} {'Predicted Archetype':<25}")
 
     for i, card in test_cards.iterrows():
