@@ -1,16 +1,31 @@
 # NLP Yi-Gi-Oh
 
-In this project, we are going to build a basic NLP model to classify Yu-Gi-Oh cards into their respective archetypes and banlist state based on their descriptions. We will use word embeddings and logistic regression to accomplish this task.
+This project is an NLP Classifier where the goal is to classify Yu-Gi-Oh cards into their respective archetypes and banlist state based on their descriptions. We will use word embeddings and logistic regression to accomplish this task.
 
 ## Dataset
 - **Yu-Gi-Oh Dataset**: [GitHub - Yu-Gi-Oh dataset](https://github.com/fferegrino/yu-gi-oh)
 
 ## Objective
-We have chosen to use this dataset to train two models:
 
-- **Model 1**: A classifier aimed at identifying a card's archetype based on its effect.
-- **Model 2**: A classifier predicting whether a card should be banned or not.
+Two models are trained in this dataset:
+
+- **archetype_model**: A classifier aimed at identifying a card's archetype based on its effect.
+- **banlist_model**: A classifier predicting whether a card should be banned or not.
 
 ## Install
 
-At the root of the project, run: git clone https://github.com/fferegrino/yu-gi-oh/
+- To download the data, at the root of the project run: git clone https://github.com/fferegrino/yu-gi-oh/
+- Install the necessary libraries: pip install -r requirements.txt
+- To load nltk_data, run the init.py file: python init.py
+- Train the model with: python train.py
+- Finally you can test the model with the following command:  
+    python predict.py [-h] [-n [NAMES ...]] [-i [IDS ...]]
+
+## Example
+python predict.py -i 14558127 84815190 41999284 90241276
+| Name                                   | Expected Banlist         | Predicted Banlist        | Expected Archetype | Predicted Archetype      |
+|----------------------------------------|--------------------------|--------------------------|---------------------|--------------------------|
+| Ash Blossom & Joyous Spring            | expected BL: nan         | pred BL: Unlimited       | expected arch: N/A   | pred arch: []            |
+| Baronne de Fleur                       | expected BL: Banned      | pred BL: Unlimited       | expected arch: Fleur | pred arch: ['Borrel']    |
+| Linkuriboh                             | expected BL: Banned      | pred BL: Unlimited       | expected arch: Kuriboh| pred arch: ['Kuriboh']  |
+| Snake-Eyes Poplar                      | expected BL: nan         | pred BL: Unlimited       | expected arch: Snake-Eye | pred arch: ['Snake-Eye'] |
