@@ -49,6 +49,11 @@ def prep_data(df):
     ban_df['ban_tcg'] = ban_df['ban_tcg'].apply(nan_to_unlimited)
     ban_df['tcg_date'] = pd.to_datetime(ban_df['tcg_date'])
 
+    unlimited_cards = ban_df[ban_df['ban_tcg'] == "Unlimited"]
+    unlimited_sample = unlimited_cards.sample(n=1000, random_state=42)
+    other_cards = ban_df[ban_df['ban_tcg'].isin(["Banned", "Limited", "Semi-Limited"])]
+    ban_df = pd.concat([unlimited_sample, other_cards])
+
     return arch_df, ban_df
 
 def prep_data_predict(df):
