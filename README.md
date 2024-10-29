@@ -28,5 +28,5 @@ python predict.py -i 14558127 84815190 41999284 90241276
 |----------------------------------------|--------------------------|--------------------------|---------------------|--------------------------|
 | Ash Blossom & Joyous Spring            | expected BL: nan         | pred BL: Unlimited       | expected arch: N/A   | pred arch: []            |
 | Baronne de Fleur                       | expected BL: Banned      | pred BL: Unlimited       | expected arch: Fleur | pred arch: ['Borrel']    |
-| Linkuriboh                             | expected BL: Banned      | pred BL: Unlimited       | expected arch: Kuriboh| pred arch: ['Kuriboh']  |
+| Linkuriboh                             | expected BL: Banned      | pred BL: Banned       | expected arch: Kuriboh| pred arch: ['Kuriboh']  |
 | Snake-Eyes Poplar                      | expected BL: nan         | pred BL: Unlimited       | expected arch: Snake-Eye | pred arch: ['Snake-Eye'] |
